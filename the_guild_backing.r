@@ -15,7 +15,7 @@ theme_set(
         )
 )
 
-data <- read_csv("backing.csv", show_col_types = FALSE, comment = "#") %>%
+data <- read_csv("sources/backing.csv", show_col_types = FALSE, comment = "#") %>%
     arrange(value)
 
 
@@ -91,4 +91,4 @@ log_g <-
         hjust = 0, vjust = 0.5
     )
 
-ggsave("guild_backing_analysis.png", width = 8, height = 6, plot = log_g)
+ggsave("graphs/guild_backing_analysis.png", width = 8, height = 6, plot = log_g)
