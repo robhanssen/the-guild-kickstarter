@@ -46,7 +46,7 @@ conflevel <- 0.99
 extrap <-
     broom::augment(
         mod,
-        newdata = tibble(value = seq(10, 15000, by = 100)),
+        newdata = tibble(value = seq(10, 26000, by = 100)),
         interval = "confidence", conf.level = conflevel
     ) %>%
     mutate(
@@ -54,7 +54,7 @@ extrap <-
     )
 
 hadj <- c(rep(-0.1, length(data$value) - 1), 1)
-vadj <- -0.5 * c(1, 1, 1, -4, 1, -4, 1, 1, 1, 1, 1, 1, 1, -4)
+vadj <- -0.5 * c(1, 1, 1, -4, 1, -4, 1, 1, 1, 1, 1, 1, 1, -4, 1)
 
 
 log_g <-
@@ -80,7 +80,7 @@ log_g <-
         x = "Pledge value (in $)",
         y = "Number of backers",
         title = glue::glue("Kickstarter contribution distribution for Watch the Guild"),
-        caption = glue::glue("Data @ 7/20/2026 EST 15:01\nConfidence ribbon at {conflevel}")
+        caption = glue::glue("Data @ 7/21/2026 EST 09:10\nConfidence ribbon at {conflevel}")
     ) +
     geom_text(
         aes(label = scales::dollar(value)),
