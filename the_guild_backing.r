@@ -80,7 +80,7 @@ log_g <-
         x = "Pledge value (in $)",
         y = "Number of backers",
         title = glue::glue("Kickstarter contribution distribution for Watch the Guild"),
-        caption = glue::glue("Data @ 7/21/2026 EST 09:10\nConfidence ribbon at {conflevel}")
+        caption = glue::glue("Data @ 20260722 EST 12:56\nConfidence ribbon at {conflevel}")
     ) +
     geom_text(
         aes(label = scales::dollar(value)),
