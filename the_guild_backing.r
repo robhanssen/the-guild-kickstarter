@@ -53,7 +53,7 @@ extrap <-
         across(.cols = c(.fitted, .lower, .upper), .fns = ~ 10^.x)
     )
 
-hadj <- c(rep(-0.1, length(data$value) - 1), 1)
+hadj <- c(rep(-0.1, length(data$value) - 2), 0.2, 0.7)
 vadj <- -0.5 * c(1, 1, 1, -4, 1, -4, 1, 1, 1, 1, 1, 1, 1, -4, 1)
 
 
@@ -80,7 +80,7 @@ log_g <-
         x = "Pledge value (in $)",
         y = "Number of backers",
         title = glue::glue("Kickstarter contribution distribution for Watch the Guild"),
-        caption = glue::glue("Data @ 20260724 EST 15:45\nConfidence ribbon at {conflevel}")
+        caption = glue::glue("Data @ 20260819 EST 15:39\nConfidence ribbon at {conflevel}")
     ) +
     geom_text(
         aes(label = scales::dollar(value)),
